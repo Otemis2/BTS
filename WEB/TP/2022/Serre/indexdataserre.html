@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+		<title>Indexdataserre</title>
+	</head>
+	<body>
+HUCK Sylvain
+		<form action="insertdataserre.php" method ="GET">
+			Générateur de valeurs aléatoires de grandeurs pour la Serre Horticole<br>
+			<label for="tempIntérieur">Température Intérieur : </label><input type="text" id="tempMin" name="tempMin">°C à <input type="text" id="tempMax" name="tempMax">°C<br>
+			<label for="Hygro">Hygrométrie de l'Air de : </label><input type="text" id="hygroMin" name="hygroMin">% à <input type="text" id="hygroMax" name="hygroMax">%<br>
+			<label for="Humidite">Humidité de la Terre de : </label><input type="text" id="HumiditeMin" name="HumiditeMin">% à <input type="text" id="HumiditeMax" name="HumiditeMax">%<br>
+			<label for="Date">Saisir la date : </label><input type="Date" id="date" name="date"><br>
+			<input type="submit" value="Envoyer">
+			<input type="reset" value="Recommencez">
+		</form>
+	<br>
+	<button onclick="window.location.href='./indexserre.php'">retour</button>
+	<br>
+	<button onclick="window.location.href='./insertdataserre.php'">Générer valeurs</button>
+	<br>
+	<button onclick="window.location.href='./deletedataserre.php'">Suppression des Données</button>
+	<br>
+	</body>
+</html>
