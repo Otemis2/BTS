@@ -1,0 +1,53 @@
+Traitetement c :
+
+$volume = $logueur**largeur*hauteur;//Calcul du volume
+$volume = round ($volume,$precision = 2);// arrondi de $volume à deux chiffres derrieie la virgule
+
+//récuperation du dernier id du fichier csv
+$fichier=fopen("paralelipede.csv","r");
+$id=0;//on initialise l'id à 0
+$ligne=fgets($fichier); //lecture de l'entete du fichier csv
+
+
+//file renvoi le contenu d'un fichier dans un tableau
+
+$id = count(file("paralelipede.csv"));
+
+$fichier=fopen("paralelipede.csv","a");
+$tab_ligne=array($id,$longueur,$largueur,$hauteur,$volume);
+fputcsv ($fichier, $tab_ligne,$delimiter=";");
+fclose ($fichier);
+
+listeTab C :
+
+if (file_exists("paralelipede.csv")
+{
+	$fichiercsv = fopen ("paralelipede.csv","r");
+	$entete=fget($fichiercsv);
+	$tab_ligne=str_getcsv ($entete, ";");// les valeurs de l'entete du fichier csv sont mises dans un tableau
+	printf("<table><tr>
+			<th>$tab_ligne[0]</th>
+			<th>$tab_ligne[1]</th>
+			<th>$tab_ligne[2]</th>
+			<th>$tab_ligne[3]</th>
+			<th>$tab_ligne[4]</th></tr>");
+			
+			$ligne=fgets($fichiercsv);//lecture de la premiere ligne de données du fichier csv
+	while($ligne!="")
+	{
+		$tab_ligne=str_getcsv($ligne,";");
+		printf("<table><tr>
+			<th>$tab_ligne[0]</th>
+			<th>$tab_ligne[1]</th>
+			<th>$tab_ligne[2]</th>
+			<th>$tab_ligne[3]</th>
+			<th>$tab_ligne[4]</th></tr>");
+		$ligne=fgets($fichiercsv);
+	}
+	printf("</table>");
+	fclose($fichiercsv);
+}
+else
+{
+	printf ("Le fichier paralelipede.csv n'existe pas !");
+}

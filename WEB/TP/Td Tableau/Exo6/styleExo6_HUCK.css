@@ -1,0 +1,21 @@
+table  {
+	border : 3px solid black;
+	border-collapse : collapse;
+}
+td  {
+	border : 1px solid black;	
+}
+th  {
+	border : 1px solid black;	
+}
+.heure 
+{
+	background-color : green;
+}
+.titre
+{
+	text-align : left;
+	font-size : 25px; 
+	font-style : italic;
+	color : blue;
+}

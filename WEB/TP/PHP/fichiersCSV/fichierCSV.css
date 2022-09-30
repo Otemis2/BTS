@@ -1,0 +1,22 @@
+table  {
+	border : 1px solid black;
+	border-collapse : collapse;
+}
+td  {
+	border : 1px solid black;	
+}
+th  {
+	border : 1px solid black;	
+}
+rowspan {
+	
+	border : 1px solid black;
+	border-collapse : collapse;
+	border-color :red;
+	
+}
+colspan {
+	border : 1px solid black;
+	border-collapse : collapse;	
+	border-color : blue;
+}
