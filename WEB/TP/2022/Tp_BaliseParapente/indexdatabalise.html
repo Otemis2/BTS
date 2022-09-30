@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" href="css.css">
+        <title>Balise Parapente</title>
+    </head>
+    <body >
+        <font size=+4>
+			Formulaire Balise Parapente
+		</font>
+		<div class="block">
+        <form action="./insertdatabalise.php" method="GET">
+            Saisir la date : <input type="date" name="date" required>
+            <br><br>
+			Saisir l'heure : <input type="time" name="heure" required>
+			<br><br>
+            Température sous Abri : <input type="number" min="-20.0" max="50.0" step="0.1" name="tempSousAbri" required> °C
+            <br><br>
+            Température Extérieur : <input type="number" min="-20.0" max="50.0" step="0.1" name="tempExte" required> °C
+            <br><br>
+            Vitesse du vent : <input type="number" min="0" max="250" name="vitesseVent" required> km/h
+            <br><br>
+            Direction du vent : <select name="directionVent" required>
+                                  <option value="Nord">Nord</option>
+                                  <option value="Nord-Est">Nord-Est</option>
+                                  <option value="Est">Est</option>
+                                  <option value="Sud-Est">Sud-Est</option>
+								  <option value="Sud">Sud</option>
+                                  <option value="Sud-Ouest">Sud-Ouest</option>
+                                  <option value="Ouest">Ouest</option>
+                                  <option value="Nord-Ouest">Nord-Ouest</option>
+                              </select>
+            <br><br>
+            Précipitation : <input type="number" min="0" max="1000" name="precipitation" required> mm
+			<br><br>
+            <input class="submit" type="submit" value="Envoyer">
+            <input class="reset" type="reset" value="Annuler">
+        </form>
+		</div>
+		<br>
+		<button onclick="window.location.href='./deletedatabalise.php'">Suppression des Données</button>
+		<button onclick="window.location.href='./indexbalise.php'">Retour à l'accueil</button>
+    </body>
+</html>

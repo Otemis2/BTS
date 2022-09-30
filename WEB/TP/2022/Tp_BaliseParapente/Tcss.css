@@ -1,0 +1,104 @@
+.imageDirection
+{
+	width : 50%;
+	height : 50%;
+}
+
+body
+{
+	text-align: center;
+	background-color: white; 
+	background-image : url("./image/image.jpg");
+	background-size : 100%;
+	background-attachment: fixed;	
+	background-repeat: no-repeat ;
+	background-position:left top;
+	width: 100%;
+	height: auto;
+}
+.contenaire
+{
+	/* We first create a flex layout context */
+	 display: flex;
+	/* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.graph
+{
+  /* background: tomato; */
+  padding: 2px;
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  /* line-height: 150px; */
+  /* color: white; */
+  font-weight: bold;
+  /* font-size: 3em; */
+  /* text-align: center;	 */
+}
+
+font
+{
+	font-family: 'Gwendolyn', cursive;
+	color: Gold;
+	font-style: italic;
+}
+
+input[type=number], input[type=date],input[type=time], select, option {
+ background-color:#f5f5dc;
+ }
+ 
+input[type=number], input[type=date],input[type=time], textarea, select {
+ padding:3px;
+ border:1px solid #e5e4e0;
+ border-radius:5px;
+ width:200px;
+ box-shadow:1px 1px 2px #C0C0C0 inset;
+ }
+select {
+ margin-top:10px;
+ }
+input[type=submit], input[type=reset] {
+ width:100px;
+ margin-left:5px;
+ box-shadow:1px 1px 1px #370b07;
+ cursor:pointer;
+ }
+
+form 
+{
+	color : AliceBlue;
+}
+
+.block  {
+ width :70%;
+margin : auto;
+border-radius : 28px;
+background-color : rgba(220,220,220 ,0.20);
+align-content: center;
+padding : 	3%;
+box-shadow : 0 2px 4px 0 rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 19%);
+}	
+
+.TempSousAbrit ,.TempExt,.VitVent,.precipi,.graph  {
+width :13%;
+margin : auto;
+border-radius : 28px;
+background-color : rgba(220,220,220 ,0.20);
+align-content: center;
+padding : 	3%;
+box-shadow : 0 2px 4px 0 rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
