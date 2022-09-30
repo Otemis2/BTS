@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Cmqtt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Cmqtt</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Craspberry%5Ccmqtt.py">c:\raspberry\cmqtt.py</a></font></td></tr></table>
+    <p><tt>##encodage:&nbsp;utf-8</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="paho.mqtt.client.html">paho.mqtt.client</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Cmqtt.html#CMqtt">CMqtt</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CMqtt">class <strong>CMqtt</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>DOCUMENTATION&nbsp;de&nbsp;la&nbsp;classe&nbsp;<a href="#CMqtt">CMqtt</a>&nbsp;:<br>
+Cette&nbsp;classe&nbsp;contient&nbsp;:<br>
+-&nbsp;1&nbsp;accesseur&nbsp;<a href="#CMqtt-getClient">getClient</a>()<br>
+-&nbsp;3&nbsp;méthodes&nbsp;:<br>
+<a href="#CMqtt-connecter">connecter</a>(client,&nbsp;userdata,&nbsp;flags,&nbsp;rc)<br>
+<a href="#CMqtt-receptionnerMessageMQTT">receptionnerMessageMQTT</a>(clientMQTT,&nbsp;userdata,&nbsp;msg)<br>
+<a href="#CMqtt-envoyerReglageAlerte">envoyerReglageAlerte</a>(nomChambre,TempMini,TempMax)<br>
+&nbsp;<br>
+Elle&nbsp;permet&nbsp;de&nbsp;se&nbsp;connecter&nbsp;à&nbsp;un&nbsp;broker&nbsp;mqtt&nbsp;,&nbsp;de&nbsp;recptionner&nbsp;et&nbsp;traiter&nbsp;des&nbsp;messages&nbsp;et&nbsp;en&nbsp;envoyer<br>
+Elle&nbsp;est&nbsp;composée&nbsp;de&nbsp;2&nbsp;classes&nbsp;(CMail&nbsp;et&nbsp;CSql)<br>
+&nbsp;<br>
+Classe&nbsp;utiliser&nbsp;:<br>
+CSql<br>
+CMail<br>
+paho.mqtt<br>
+Documentation&nbsp;source&nbsp;:<br>
+<a href="https://pypi.org/project/paho-mqtt/">https://pypi.org/project/paho-mqtt/</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="CMqtt-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Méthode&nbsp;d'initialisation&nbsp;de&nbsp;la&nbsp;classe&nbsp;CMail<br>
+Nécessitant&nbsp;aucun&nbsp;paramètre<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;monMqtt&nbsp;=&nbsp;<a href="#CMqtt">CMqtt</a>()</tt></dd></dl>
+
+<dl><dt><a name="CMqtt-connecter"><strong>connecter</strong></a>(self, client, userdata, flags, rc)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;connecter<br>
+Méthode&nbsp;qui&nbsp;permet&nbsp;la&nbsp;souscription&nbsp;à&nbsp;un&nbsp;topic<br>
+Nécessitant&nbsp;quatre&nbsp;paramètres&nbsp;:<br>
+-&nbsp;client&nbsp;est&nbsp;une&nbsp;instance&nbsp;client&nbsp;pour&nbsp;un&nbsp;rappel&nbsp;<br>
+-&nbsp;userdata&nbsp;données&nbsp;d'utilisateur&nbsp;privées&nbsp;<br>
+-&nbsp;flags&nbsp;est&nbsp;un&nbsp;indicateur&nbsp;de&nbsp;réponse&nbsp;envoyés&nbsp;par&nbsp;le&nbsp;broker<br>
+-&nbsp;rc&nbsp;correspond&nbsp;au&nbsp;résultat&nbsp;de&nbsp;la&nbsp;connexion<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;clientMqtt.on_connect&nbsp;=&nbsp;monMQTT.connecter</tt></dd></dl>
+
+<dl><dt><a name="CMqtt-envoyerReglageAlerte"><strong>envoyerReglageAlerte</strong></a>(self, nomChambre, TempMini, TempMax)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;envoyerReglageAlerte<br>
+Méthode&nbsp;qui&nbsp;prépare&nbsp;le&nbsp;message&nbsp;à&nbsp;envoyer&nbsp;dans&nbsp;le&nbsp;topic&nbsp;"reglageAlerte"&nbsp;de&nbsp;la&nbsp;chambre&nbsp;qui&nbsp;a&nbsp;publié&nbsp;dans&nbsp;le&nbsp;topic&nbsp;"etatESP"<br>
+Et&nbsp;publie&nbsp;le&nbsp;message<br>
+Nécessitant&nbsp;trois&nbsp;paramètres&nbsp;:<br>
+-&nbsp;nomChambre&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;qui&nbsp;contient&nbsp;le&nbsp;nom&nbsp;de&nbsp;la&nbsp;chambre&nbsp;<br>
+-&nbsp;TempMini&nbsp;en&nbsp;flottant&nbsp;qui&nbsp;contient&nbsp;le&nbsp;réglage&nbsp;de&nbsp;déclanchement&nbsp;de&nbsp;l'alerte&nbsp;minimum<br>
+-&nbsp;TempMax&nbsp;en&nbsp;flottant&nbsp;qui&nbsp;contient&nbsp;le&nbsp;réglage&nbsp;de&nbsp;déclanchement&nbsp;de&nbsp;l'alerte&nbsp;maximum<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;monMQTT.<a href="#CMqtt-envoyerReglageAlerte">envoyerReglageAlerte</a>(chambre1,-4.01,0.25)</tt></dd></dl>
+
+<dl><dt><a name="CMqtt-getClient"><strong>getClient</strong></a>(self)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;getClient<br>
+Accesseur&nbsp;qui&nbsp;renvoie&nbsp;le&nbsp;client&nbsp;<br>
+Nécessitant&nbsp;aucun&nbsp;paramètre&nbsp;:<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;client&nbsp;=&nbsp;monMqtt.<a href="#CMqtt-getClient">getClient</a>()</tt></dd></dl>
+
+<dl><dt><a name="CMqtt-receptionnerMessageMQTT"><strong>receptionnerMessageMQTT</strong></a>(self, clientMQTT, userdata, msg)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;receptionnerMessageMQTT<br>
+Méthode&nbsp;qui&nbsp;réceptionne&nbsp;un&nbsp;message&nbsp;du&nbsp;broker,&nbsp;puis&nbsp;le&nbsp;traite<br>
+En&nbsp;fonction&nbsp;du&nbsp;nom&nbsp;de&nbsp;topic,&nbsp;enregistre&nbsp;les&nbsp;données&nbsp;dans&nbsp;la&nbsp;base&nbsp;de&nbsp;données&nbsp;ou&nbsp;envois&nbsp;un&nbsp;mail&nbsp;d'alerte&nbsp;ou&nbsp;envois&nbsp;des&nbsp;données&nbsp;dans&nbsp;un&nbsp;topic&nbsp;à&nbsp;l'aide&nbsp;d'autre&nbsp;méthode<br>
+Nécessitant&nbsp;trois&nbsp;paramètres&nbsp;:<br>
+-&nbsp;clientMQTT&nbsp;est&nbsp;une&nbsp;instance&nbsp;client&nbsp;pour&nbsp;un&nbsp;rappel&nbsp;<br>
+-&nbsp;userdata&nbsp;données&nbsp;d'utilisateur&nbsp;privées&nbsp;<br>
+-&nbsp;msg&nbsp;qui&nbsp;contient&nbsp;les&nbsp;messages&nbsp;renvoyer&nbsp;par&nbsp;le&nbsp;broker<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;clientMqtt.on_message&nbsp;=&nbsp;monMQTT.receptionnerMessageMQTT</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>bdd</strong> = 'projet-chambre-froide_bdd'<br>
+<strong>ipBroker</strong> = '192.0.0.4'<br>
+<strong>ipServeurBdd</strong> = 'mysql-projet-chambre-froide.alwaysdata.net'<br>
+<strong>mailFin</strong> = "Voici le lien pour consulter l'historique : <font color="#c040c0">\n</font> ht...ification.php <font color="#c040c0">\n</font> Merci, d'intervenir rapidement ! "<br>
+<strong>mailPorte</strong> = 'La porte est restée ouverte depuis plus 5 minutes.<font color="#c040c0">\n</font>'<br>
+<strong>mailSMTP</strong> = 'smtp.gmail.com'<br>
+<strong>mailTemp</strong> = 'La température est passée au-dessus du seuil de tolérance.<font color="#c040c0">\n</font>'<br>
+<strong>mdpBdd</strong> = 'DSTPROJET2022'<br>
+<strong>mdpMail</strong> = 'DST2022Projet'<br>
+<strong>monEmail</strong> = 'dstprojet2022@gmail.com'<br>
+<strong>portSMTP</strong> = 587<br>
+<strong>sujetMail</strong> = 'Alerte chambre froide !'<br>
+<strong>utilisateur</strong> = '253841'</td></tr></table>
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Csql</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Csql</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Craspberry%5Ccsql.py">c:\raspberry\csql.py</a></font></td></tr></table>
+    <p><tt>##encodage:&nbsp;utf-8</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="mysql.html">mysql</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Csql.html#CSql">CSql</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CSql">class <strong>CSql</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#CSql">CSql</a>(ipServeurBdd,&nbsp;bdd,&nbsp;utilisateur,&nbsp;mdp)<br>
+&nbsp;<br>
+DOCUMENTATION&nbsp;de&nbsp;la&nbsp;classe&nbsp;<a href="#CSql">CSql</a>&nbsp;:<br>
+Cette&nbsp;classe&nbsp;contient&nbsp;:<br>
+-&nbsp;2&nbsp;accesseur&nbsp;:<br>
+<a href="#CSql-getTempMini">getTempMini</a>()<br>
+<a href="#CSql-getTempMax">getTempMax</a>()<br>
+-&nbsp;7&nbsp;méthodes&nbsp;:<br>
+<a href="#CSql-insertionPorte">insertionPorte</a>(msgPorte,date,heure)<br>
+<a href="#CSql-insertionTemperature">insertionTemperature</a>(msgTemp,date,heure)<br>
+<a href="#CSql-insertionAlerte">insertionAlerte</a>(codeAlerte,date,heure)<br>
+<a href="#CSql-insertionAcquittement">insertionAcquittement</a>(date,heure)<br>
+<a href="#CSql-selectionMail">selectionMail</a>()<br>
+<a href="#CSql-selectionIdChambre">selectionIdChambre</a>(nomChambre)<br>
+<a href="#CSql-selectionReglageAlerte">selectionReglageAlerte</a>(idChambre)<br>
+&nbsp;<br>
+Elle&nbsp;permet&nbsp;de&nbsp;se&nbsp;connecter&nbsp;à&nbsp;un&nbsp;serveur&nbsp;de&nbsp;base&nbsp;de&nbsp;données&nbsp;,&nbsp;de&nbsp;sélectionner&nbsp;et&nbsp;d'insérer&nbsp;des&nbsp;données.<br>
+Classes&nbsp;utilisées&nbsp;:&nbsp;<br>
+mysql.connector<br>
+Documentation&nbsp;source&nbsp;:<br>
+<a href="https://dev.mysql.com/doc/connector-python/en/">https://dev.mysql.com/doc/connector-python/en/</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="CSql-__init__"><strong>__init__</strong></a>(self, ipServeurBdd, bdd, utilisateur, mdp)</dt><dd><tt>Méthode&nbsp;d'initialisation&nbsp;de&nbsp;la&nbsp;classe&nbsp;<a href="#CSql">CSql</a><br>
+Nécessitant&nbsp;quatre&nbsp;paramètres&nbsp;:<br>
+-&nbsp;l'ip&nbsp;du&nbsp;serveur&nbsp;de&nbsp;base&nbsp;de&nbsp;données&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;en&nbsp;Ipv4<br>
+-&nbsp;la&nbsp;base&nbsp;de&nbsp;données&nbsp;cibles&nbsp;chaîne&nbsp;de&nbsp;caractères<br>
+-&nbsp;l'utilisateur&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères<br>
+-&nbsp;le&nbsp;mot&nbsp;de&nbsp;passe&nbsp;de&nbsp;l'utilisateur&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;monSQL&nbsp;=&nbsp;<a href="#CSql">CSql</a>(127.0.0.1,Supervision,toto,azerty88)</tt></dd></dl>
+
+<dl><dt><a name="CSql-getTempMax"><strong>getTempMax</strong></a>(self)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;getTempMax<br>
+Accesseur&nbsp;qui&nbsp;renvois&nbsp;la&nbsp;température&nbsp;maximum&nbsp;toléré&nbsp;de&nbsp;la&nbsp;chambre&nbsp;avant&nbsp;alerte<br>
+Nécessitant&nbsp;aucun&nbsp;paramètre<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;tempMax&nbsp;=&nbsp;monSQL.<a href="#CSql-getTempMax">getTempMax</a>()</tt></dd></dl>
+
+<dl><dt><a name="CSql-getTempMini"><strong>getTempMini</strong></a>(self)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;getTempMini<br>
+Accesseur&nbsp;qui&nbsp;renvois&nbsp;la&nbsp;température&nbsp;minimum&nbsp;toléré&nbsp;de&nbsp;la&nbsp;chambre&nbsp;avant&nbsp;alerte<br>
+Nécessitant&nbsp;aucun&nbsp;paramètre<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;tempMini&nbsp;=&nbsp;monSQL.<a href="#CSql-getTempMini">getTempMini</a>()</tt></dd></dl>
+
+<dl><dt><a name="CSql-insertionAcquittement"><strong>insertionAcquittement</strong></a>(self, date, heure)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;insertionAcquittement<br>
+Méthode&nbsp;qui&nbsp;permet&nbsp;de&nbsp;mettre&nbsp;à&nbsp;jour&nbsp;le&nbsp;dernier&nbsp;enregistrement&nbsp;de&nbsp;l'alerte&nbsp;dans&nbsp;la&nbsp;base&nbsp;de&nbsp;données(date,&nbsp;heure)<br>
+Nécessitant&nbsp;deux&nbsp;paramètres&nbsp;:<br>
+-&nbsp;la&nbsp;date&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;en&nbsp;format&nbsp;:&nbsp;2022/02/20&nbsp;(AAAA/MM/JJ)<br>
+-&nbsp;l'heure&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;en&nbsp;heure&nbsp;:&nbsp;13:00&nbsp;(HH:MM)<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;monSQL.<a href="#CSql-insertionAcquittement">insertionAcquittement</a>(2022/02/20,12:00)</tt></dd></dl>
+
+<dl><dt><a name="CSql-insertionAlerte"><strong>insertionAlerte</strong></a>(self, codeAlerte, date, heure)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;insertionAlerte<br>
+Méthode&nbsp;qui&nbsp;permet&nbsp;d'insérer&nbsp;dans&nbsp;la&nbsp;base&nbsp;de&nbsp;données&nbsp;l'enregistrement&nbsp;de&nbsp;l'alerte&nbsp;(valeur&nbsp;du&nbsp;code&nbsp;alerte,&nbsp;date,&nbsp;heure)<br>
+Nécessitant&nbsp;trois&nbsp;paramètres&nbsp;:<br>
+-&nbsp;le&nbsp;code&nbsp;d'alerte&nbsp;en&nbsp;booléen&nbsp;"1"&nbsp;=&gt;&nbsp;alerte&nbsp;porte&nbsp;,&nbsp;"2"&nbsp;=&gt;&nbsp;alerte&nbsp;température<br>
+-&nbsp;la&nbsp;date&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;en&nbsp;format&nbsp;:&nbsp;2022/02/20&nbsp;(AAAA/MM/JJ)<br>
+-&nbsp;l'heure&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;en&nbsp;heure&nbsp;:&nbsp;13:00&nbsp;(HH:MM)<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;monSQL.<a href="#CSql-insertionAlerte">insertionAlerte</a>(2,2022/02/20,12:00)</tt></dd></dl>
+
+<dl><dt><a name="CSql-insertionPorte"><strong>insertionPorte</strong></a>(self, msgPorte, date, heure)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;insertionPorte<br>
+Méthode&nbsp;qui&nbsp;permet&nbsp;d'insérer&nbsp;dans&nbsp;la&nbsp;base&nbsp;de&nbsp;données&nbsp;l'enregistrement&nbsp;de&nbsp;la&nbsp;porte&nbsp;(état&nbsp;de&nbsp;la&nbsp;porte,&nbsp;date,&nbsp;heure)<br>
+Nécessitant&nbsp;trois&nbsp;paramètres&nbsp;:<br>
+-&nbsp;l'état&nbsp;de&nbsp;la&nbsp;porte&nbsp;en&nbsp;booléen&nbsp;"0"&nbsp;=&gt;&nbsp;fermée&nbsp;,&nbsp;"1"&nbsp;=&gt;&nbsp;ouvert<br>
+-&nbsp;la&nbsp;date&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;en&nbsp;format&nbsp;:&nbsp;2022/02/20&nbsp;(AAAA/MM/JJ)<br>
+-&nbsp;l'heure&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;en&nbsp;heure&nbsp;:&nbsp;13:00&nbsp;(HH:MM)<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;monSQL.<a href="#CSql-insertionPorte">insertionPorte</a>(1,2022/02/20,12:00)</tt></dd></dl>
+
+<dl><dt><a name="CSql-insertionTemperature"><strong>insertionTemperature</strong></a>(self, msgTemp, date, heure)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;insertionTemperature<br>
+Méthode&nbsp;qui&nbsp;permet&nbsp;d'insérer&nbsp;dans&nbsp;la&nbsp;base&nbsp;de&nbsp;données&nbsp;l'enregistrement&nbsp;de&nbsp;la&nbsp;température&nbsp;(valeur&nbsp;de&nbsp;la&nbsp;température,&nbsp;date,&nbsp;heure)<br>
+Nécessitant&nbsp;trois&nbsp;paramètres&nbsp;:<br>
+-&nbsp;l'état&nbsp;de&nbsp;la&nbsp;porte&nbsp;en&nbsp;flottant&nbsp;12,75&nbsp;<br>
+-&nbsp;la&nbsp;date&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;en&nbsp;format&nbsp;:&nbsp;2022/02/20&nbsp;(AAAA/MM/JJ)<br>
+-&nbsp;l'heure&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères&nbsp;en&nbsp;heure&nbsp;:&nbsp;13:00&nbsp;(HH:MM)<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;monSQL.<a href="#CSql-insertionTemperature">insertionTemperature</a>(12,75,2022/02/20,12:00)</tt></dd></dl>
+
+<dl><dt><a name="CSql-selectionIdChambre"><strong>selectionIdChambre</strong></a>(self, nomChambre)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;selectionIdChambre<br>
+Méthode&nbsp;qui&nbsp;permet&nbsp;de&nbsp;sélectionner&nbsp;l'id&nbsp;de&nbsp;la&nbsp;chambre&nbsp;en&nbsp;fonction&nbsp;du&nbsp;nom&nbsp;de&nbsp;la&nbsp;chambre<br>
+Retourne&nbsp;l'idChambre<br>
+Nécessitant&nbsp;un&nbsp;paramètre&nbsp;:<br>
+-&nbsp;nom&nbsp;de&nbsp;la&nbsp;chambre&nbsp;en&nbsp;chaîne&nbsp;de&nbsp;caractères<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;idChambre&nbsp;=&nbsp;monSQL.<a href="#CSql-selectionIdChambre">selectionIdChambre</a>(chambre&nbsp;1)</tt></dd></dl>
+
+<dl><dt><a name="CSql-selectionMail"><strong>selectionMail</strong></a>(self)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;selectionMail<br>
+Méthode&nbsp;qui&nbsp;permet&nbsp;de&nbsp;sélectionner&nbsp;le&nbsp;mail&nbsp;de&nbsp;toute&nbsp;les&nbsp;personnes<br>
+Retourne-le&nbsp;ou&nbsp;les&nbsp;destinataire(s)<br>
+Nécessitant&nbsp;aucun&nbsp;paramètre<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;listeDestinataire&nbsp;=&nbsp;monSQL.<a href="#CSql-selectionMail">selectionMail</a>()</tt></dd></dl>
+
+<dl><dt><a name="CSql-selectionReglageAlerte"><strong>selectionReglageAlerte</strong></a>(self, idChambre)</dt><dd><tt>DOCUMENTATION&nbsp;de&nbsp;selectionReglageAlerte<br>
+Méthode&nbsp;qui&nbsp;permet&nbsp;de&nbsp;sélectionner&nbsp;le&nbsp;réglage&nbsp;de&nbsp;l'alerte&nbsp;de&nbsp;la&nbsp;chambre<br>
+Nécessitant&nbsp;un&nbsp;paramètre&nbsp;:<br>
+-&nbsp;id&nbsp;de&nbsp;la&nbsp;chambre&nbsp;en&nbsp;entier<br>
+Exemple&nbsp;d'appel&nbsp;:&nbsp;reglage&nbsp;=&nbsp;monSQL.<a href="#CSql-selectionReglageAlerte">selectionReglageAlerte</a>(7)</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
